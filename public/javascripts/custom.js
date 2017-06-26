@@ -17,28 +17,14 @@ $('#fillSurveyButton').on('click',function(){
 // handleFriendForm
 
 $('#formSubmitButton').on('click',function(){
-    //event.preventDefault();
+    event.preventDefault();
     // if the nameQuestion and the photoQuestion
     // are empty then alert the user to enter those fields
     if($('#nameQuestionSelect').val()==""&&$('#photoQuestionSelect').val()==""){
         window.alert('Please fill form completely');
     }else{
-        //console.log($('#nameQuestionSelect'));
-        console.log($('#nameQuestionSelect').val());
-        var formData = {
-            nameQuestion : $('#nameQuestionSelect').val(),
-            photoQuestion : $('#photoQuestionSelect').val(),
-            questionZero : $('#zeroQuestionSelect').val(),
-            questionOne : $('#firstQuestionSelect').val(),
-            questionTwo : $('#secondQuestionSelect').val(),
-            questionThree : $('#thirdQuestionSelect').val(),
-            questionFour : $('#fourthQuestionSelect').val(),
-            questionFive : $('#fifthQuestionSelect').val(),
-        };
-        console.log('form data created');
-        $.post('/form/formHandle',formData,function(){
-            console.log('success');
-        },'json');
+        $('#friendFinderForm').submit();
+        
 
             // run findFriend();
             
